@@ -1,0 +1,11 @@
+{
+    "variants": {
+	"inventory" : {
+			 "model" : "dtsakuracompact:spile"
+		  },
+        "facing=north": { "model": "dtsakuracompact:spile" },
+        "facing=south": { "model": "dtsakuracompact:spile", "y": 180 },
+        "facing=west":  { "model": "dtsakuracompact:spile", "y": 270 },
+        "facing=east":  { "model": "dtsakuracompact:spile", "y": 90 }
+    }
+}

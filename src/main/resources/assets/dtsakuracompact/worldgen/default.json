@@ -1,0 +1,40 @@
+[
+  {
+    "select": {
+      "name": "sakura:bamboo_forest"
+    },
+    "apply": {
+      "species": {
+        "random": {
+          "dtsakuracompact:sakura": 1,
+          "dynamictrees:oak": 1
+        }
+      },
+      "density": [
+        0.8
+      ],
+      "chance": 1,
+      "cancelvanilla": false
+    }
+  },
+  {
+    "select": {
+      "name": "sakura:maple_forest"
+    },
+    "apply": {
+      "species": {
+        "random": {
+          "dtsakuracompact:maplegreen": 1,
+          "dtsakuracompact:mapleorange": 1,
+          "dtsakuracompact:maplered": 1,
+          "dtsakuracompact:mapleyellow": 1
+        }
+      },
+      "density": [
+        1.0
+      ],
+      "chance": 1,
+      "cancelvanilla": true
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dtsakuracompact:blocks/ume",
+    "ume": "dtsakuracompact:blocks/ume"
+  },
+  "elements": [
+    {	"from": [ 7, 14, 7 ],
+      "to": [ 9, 16, 9 ],
+      "faces": {
+        "down":  { "uv": [ 1,11, 4, 14 ], "texture": "#ume" },
+        "up":    { "uv": [ 1, 1, 4, 4 ], "texture":  "#ume" },
+        "north": { "uv": [ 1, 6, 4, 9 ], "texture": "#ume" },
+        "south": { "uv": [ 1, 6, 4, 9 ], "texture": "#ume" },
+        "west":  { "uv": [ 1, 6, 4, 9 ], "texture": "#ume" },
+        "east":  { "uv": [ 1, 6, 4, 9 ], "texture": "#ume" }
+      }
+    }
+  ]
+}

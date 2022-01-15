@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "age=0": { "model": "dtsakuracompact:ume_age0" },
+        "age=1": { "model": "dtsakuracompact:ume_age1" },
+        "age=2": { "model": "dtsakuracompact:ume_age2" },
+        "age=3": { "model": "dtsakuracompact:ume_age3" }
+    }
+}

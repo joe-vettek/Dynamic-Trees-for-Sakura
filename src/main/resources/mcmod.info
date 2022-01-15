@@ -1,0 +1,14 @@
+[
+{
+  "modid": "dtsakuracompact",
+  "name": "Dynamic Trees for Sakura",
+  "description": "Added a dynamic tree version to the Sakura mod.This is my first mod. Thank everyone who helps me. The mod is still under development. Please backup your world before joining it.",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "authorList": ["xueluoanping"],
+  "credits": "ferreusveritas , Syameimaru Zheng , Max Hyper , Harleyoc1 ,  TaoismDeepLake , 3TUSK , Teacon2021 , Sam_Chai , RisingInIris2017 , skyinr , ZekerZhayard",
+  "logoFile": "assets/dtsakuracompact/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

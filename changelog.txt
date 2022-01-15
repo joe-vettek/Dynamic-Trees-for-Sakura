@@ -1,0 +1,25 @@
+-------------------------------------------------
+-------------------------------------------------
+1.12.2-1.3.1:
+1.Fixed the bug that the server could not start normally.
+-------------------------------------------------
+-------------------------------------------------
+1.12.2-1.3.0:
+1. Sakura become more slender;
+2. Fixed the bug that the special effect of falling leaves was lost;
+3. Added a new variety of sakura, now there is a chance to grow small sakura when planting sakura.
+-------------------------------------------------
+-------------------------------------------------
+1.12.2-1.2.1:
+1.Now there are falling leaves flying in the air.
+2.Fixed latency issues.
+-------------------------------------------------
+-------------------------------------------------
+1.12.2-1.2.0:
+1.Added the corresponding falling leaves effect like that in the Sakura Mod.
+-------------------------------------------------
+-------------------------------------------------
+1.12.2-1.181:
+First publish.
+-------------------------------------------------
+-------------------------------------------------

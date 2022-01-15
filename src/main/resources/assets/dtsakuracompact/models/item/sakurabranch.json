@@ -1,0 +1,7 @@
+{
+    "parent": "dynamictrees:item/branch",
+    "textures": {
+        "bark": "sakura:blocks/sakura_log",
+        "rings": "sakura:blocks/sakura_log_top"
+    }
+}

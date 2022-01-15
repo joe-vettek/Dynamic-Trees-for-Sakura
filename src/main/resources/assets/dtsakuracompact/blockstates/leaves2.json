@@ -1,0 +1,22 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"transform": "forge:default-block",
+    	"model": "leaves",
+		"textures": { "all": "blocks/leaves" }
+	},
+	"variants": {
+		"tree": {
+			"0": {"textures": { "all": "sakura:blocks/ume_leaves"}},
+			"1": {"textures": { "all": "sakura:blocks/ume_leaves"}},
+			"2": {"textures": { "all": "sakura:blocks/ume_leaves"}},
+			"3": {"textures": { "all": "sakura:blocks/ume_leaves"}}
+		},
+		"hydro": {
+			"1": {},
+			"2": {},
+			"3": {},
+			"4": {}
+		}
+	}
+}

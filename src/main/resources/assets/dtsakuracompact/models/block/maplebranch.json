@@ -1,0 +1,7 @@
+{
+	"parent": "dynamictrees:block/smartmodel/branch",
+	"textures": {
+		"bark": "sakura:blocks/maple_log",
+		"rings": "sakura:blocks/maple_log_top"
+	}
+}
