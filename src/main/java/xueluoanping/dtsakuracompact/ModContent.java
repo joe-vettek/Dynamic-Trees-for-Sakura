@@ -164,7 +164,7 @@ public class ModContent {
         registry.register(mapleSpile_extened.setRegistryName(info.modid, "maple_spile").setCreativeTab(dynamicTreesTab).setUnlocalizedName("dtsakuracompact.maple_spile"));
 //        DynamicTrees_Sakura.LOGGER.debug(mapleSpile_extened.getUnlocalizedName());
         initTileEntity();
-        render();
+
     }
 
     public static ILeavesProperties setUpLeaves(Block leavesBlock, IBlockState leavesState, int leavesMeta, String cellKit, int smother, int light) {
@@ -230,7 +230,7 @@ public class ModContent {
         registry.registerAll(treeItems.toArray(new Item[treeItems.size()]));
         mapleSpileItem = new ItemBlock(mapleSpile_extened);
         registry.register(mapleSpileItem.setRegistryName(info.modid, "maple_spile"));
-        registerRender(mapleSpile_extened);
+
     }
 
     @SubscribeEvent
@@ -247,8 +247,7 @@ public class ModContent {
             RegistryManager.ACTIVE.getRegistry(GameData.RECIPES)
                     .remove(new ResourceLocation(SakuraMain.MODID, "maple_spile"));
             GameRegistry.addShapelessRecipe(new ResourceLocation(info.modid, "spile_re"),
-                    (ResourceLocation) null,
-                    mapleSpileItem.getDefaultInstance(),
+                    (ResourceLocation) null,new ItemStack(mapleSpileItem, 1),
                     Ingredient.fromItem(Item.getItemFromBlock(BlockLoader.MAPLE_SPILE)));
         }
 
@@ -282,6 +281,8 @@ public class ModContent {
             }
         }
         LeavesPaging.getLeavesMapForModId(info.modid).forEach((key, leaves) -> ModelLoader.setCustomStateMapper(leaves, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE).build()));
+        render();
+        registerRender(mapleSpile_extened);
     }
 
     @SideOnly(Side.CLIENT)

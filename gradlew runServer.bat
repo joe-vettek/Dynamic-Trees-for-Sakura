@@ -1,0 +1,2 @@
+gradlew runServer
+pause
