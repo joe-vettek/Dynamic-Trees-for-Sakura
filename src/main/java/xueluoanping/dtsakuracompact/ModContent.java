@@ -1,8 +1,6 @@
 package xueluoanping.dtsakuracompact;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 import java.util.function.BinaryOperator;
 
 import cn.mcmod.sakura.SakuraConfig;
@@ -39,6 +37,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -130,12 +129,13 @@ public class ModContent {
             mapleyellowLeavesProperties = setUpLeaves(SpeciesMapleYellow.leavesBlock, SpeciesMapleYellow.leavesBlock.getDefaultState(), 0, "deciduous", 3, 13);
             umeLeavesProperties = setUpLeaves(TreeUme.leavesBlock, TreeUme.leavesBlock.getDefaultState(), 0, "deciduous", 3, 13);
 
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 0, sakuraLeavesProperties);
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 4, maplegreenLeavesProperties);
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 5, mapleorangeLeavesProperties);
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 6, mapleredLeavesProperties);
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 7, mapleyellowLeavesProperties);
-            LeavesPaging.getLeavesBlockForSequence(info.modid, 8, umeLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 0, sakuraLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 4, maplegreenLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 5, mapleorangeLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 6, mapleredLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 7, mapleyellowLeavesProperties);
+            xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesBlockForSequence(info.modid, 8, umeLeavesProperties);
+
             TreeFamily sakuraTree = new TreeSakura();
             TreeFamily mapleTree = new TreeMaple();
             TreeFamily umeTree = new TreeUme();
@@ -158,7 +158,7 @@ public class ModContent {
         trees.forEach(tree -> tree.registerSpecies(Species.REGISTRY));
         ArrayList<Block> treeBlocks = new ArrayList<>();
         trees.forEach(tree -> tree.getRegisterableBlocks(treeBlocks));
-        treeBlocks.addAll(LeavesPaging.getLeavesMapForModId(info.modid).values());
+        treeBlocks.addAll(xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesMapForModId(info.modid).values());
         registry.registerAll(treeBlocks.toArray(new Block[treeBlocks.size()]));
         registry.register(CommonProxy.plum);
         registry.register(mapleSpile_extened.setRegistryName(info.modid, "maple_spile").setCreativeTab(dynamicTreesTab).setUnlocalizedName("dtsakuracompact.maple_spile"));
@@ -175,31 +175,7 @@ public class ModContent {
                 TreeRegistry.findCellKit(cellKit)) {
             @Override
             public boolean updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-
-                int j = rand.nextInt(2) * 2 - 1;
-                int k = rand.nextInt(2) * 2 - 1;
-
-                double d0 = pos.getX() + 0.5D + 0.25D * j;
-                double d1 = pos.getY() - 0.15D;
-                double d2 = pos.getZ() + 0.5D + 0.25D * k;
-                double d3 = rand.nextFloat() * j * 0.1D;
-                double d4 = ((rand.nextFloat()) * 0.055D) + 0.015D;
-                double d5 = rand.nextFloat() * k * 0.1D;
-                if (state.getBlock().getRegistryName().toString().equals("dtsakuracompact:leaves0"))
-                    SakuraMain.proxy.spawnParticle(SakuraParticleType.LEAVESSAKURA, d0, d1, d2, d3, -d4, d5);
-                if (state.getBlock().getRegistryName().toString().equals("dtsakuracompact:leaves1")
-                        && state.getBlock().getMetaFromState(state) / 4 == 0)
-                    SakuraMain.proxy.spawnParticle(SakuraParticleType.MAPLEGREEN, d0, d1, d2, d3, -d4, d5);
-                if (state.getBlock().getRegistryName().toString().equals("dtsakuracompact:leaves1")
-                        && state.getBlock().getMetaFromState(state) / 4 == 1)
-                    SakuraMain.proxy.spawnParticle(SakuraParticleType.MAPLEORANGE, d0, d1, d2, d3, -d4, d5);
-                if (state.getBlock().getRegistryName().toString().equals("dtsakuracompact:leaves1")
-                        && state.getBlock().getMetaFromState(state) / 4 == 2)
-                    SakuraMain.proxy.spawnParticle(SakuraParticleType.MAPLERED, d0, d1, d2, d3, -d4, d5);
-                if (state.getBlock().getRegistryName().toString().equals("dtsakuracompact:leaves1")
-                        && state.getBlock().getMetaFromState(state) / 4 == 3)
-                    SakuraMain.proxy.spawnParticle(SakuraParticleType.MAPLEYELLOW, d0, d1, d2, d3, -d4, d5);
-//                DynamicTrees_Sakura.LOGGER.debug("helloDTS" + rand.nextInt(2)+pos.toString()+state.getBlock().getRegistryName().toString()+state.toString());
+//                DynamicTrees_Sakura.LOGGER.debug("helloDTS" + worldIn.isRemote + rand.nextInt(2) + pos.toString() + state.getBlock().getRegistryName().toString() + state.toString());
                 return super.updateTick(worldIn, pos, state, rand);
             }
 
@@ -247,7 +223,7 @@ public class ModContent {
             RegistryManager.ACTIVE.getRegistry(GameData.RECIPES)
                     .remove(new ResourceLocation(SakuraMain.MODID, "maple_spile"));
             GameRegistry.addShapelessRecipe(new ResourceLocation(info.modid, "spile_re"),
-                    (ResourceLocation) null,new ItemStack(mapleSpileItem, 1),
+                    (ResourceLocation) null, new ItemStack(mapleSpileItem, 1),
                     Ingredient.fromItem(Item.getItemFromBlock(BlockLoader.MAPLE_SPILE)));
         }
 
@@ -280,7 +256,7 @@ public class ModContent {
 
             }
         }
-        LeavesPaging.getLeavesMapForModId(info.modid).forEach((key, leaves) -> ModelLoader.setCustomStateMapper(leaves, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE).build()));
+        xueluoanping.dtsakuracompact.block.LeavesPaging.getLeavesMapForModId(info.modid).forEach((key, leaves) -> ModelLoader.setCustomStateMapper(leaves, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE).build()));
         render();
         registerRender(mapleSpile_extened);
     }
