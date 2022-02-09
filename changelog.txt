@@ -1,5 +1,10 @@
 -------------------------------------------------
 -------------------------------------------------
+1.12.2-1.4.0.3:
+1.Sakura glows at night as it's in the Sakura Mod.
+2.Optimized maple sugar extraction logic to avoid occasional crashes in multiplayer games (update strongly recommended).
+-------------------------------------------------
+-------------------------------------------------
 1.12.2-1.4.0.2:
 1.Fixed the lost particle effects in multiplayer game.
 -------------------------------------------------
