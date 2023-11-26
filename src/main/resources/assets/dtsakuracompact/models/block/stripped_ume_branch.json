@@ -1,0 +1,7 @@
+{
+    "loader":"dynamictrees:branch",
+    "textures":{
+        "bark":"sakura:block/stripped_ume_log",
+        "rings":"sakura:block/stripped_ume_log_top"
+    }
+}

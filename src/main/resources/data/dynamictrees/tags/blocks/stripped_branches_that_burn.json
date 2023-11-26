@@ -1,0 +1,8 @@
+{
+    "replace":false,
+    "values":[
+        "dtsakuracompact:stripped_maple_branch",
+        "dtsakuracompact:stripped_sakura_branch",
+        "dtsakuracompact:stripped_ume_branch"
+    ]
+}

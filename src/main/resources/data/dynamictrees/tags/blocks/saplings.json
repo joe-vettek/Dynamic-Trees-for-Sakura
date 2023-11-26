@@ -1,0 +1,11 @@
+{
+    "replace":false,
+    "values":[
+        "dtsakuracompact:maplegreen_sapling",
+        "dtsakuracompact:mapleorange_sapling",
+        "dtsakuracompact:maplered_sapling",
+        "dtsakuracompact:mapleyellow_sapling",
+        "dtsakuracompact:sakura_sapling",
+        "dtsakuracompact:ume_sapling"
+    ]
+}

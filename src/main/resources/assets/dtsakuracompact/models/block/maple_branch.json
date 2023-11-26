@@ -1,0 +1,7 @@
+{
+    "loader":"dynamictrees:branch",
+    "textures":{
+        "bark":"sakura:block/maple_log",
+        "rings":"sakura:block/maple_log_top"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "replace":false,
+    "values":[
+        "dtsakuracompact:maplegreen_leaves",
+        "dtsakuracompact:mapleorange_leaves",
+        "dtsakuracompact:maplered_leaves",
+        "dtsakuracompact:mapleyellow_leaves",
+        "dtsakuracompact:sakura_leaves",
+        "dtsakuracompact:ume_leaves"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "common_leaves":"dtsakuracompact:maplegreen",
+    "common_species":"dtsakuracompact:maplegreen",
+    "primitive_log":"sakura:maple_log_green",
+    "primitive_stripped_log":"sakura:stripped_maple_log",
+    "max_branch_radius":8
+}
