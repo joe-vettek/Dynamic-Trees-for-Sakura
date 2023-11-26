@@ -1,43 +1,99 @@
 package xueluoanping.dtsakuracompact;
 
-import cn.mcmod.sakura.SakuraMain;
-import com.ferreusveritas.dynamictrees.ModConstants;
-
+import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
+import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
+import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
+import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
+import com.ferreusveritas.dynamictrees.trees.Family;
+import com.ferreusveritas.dynamictrees.trees.Species;
+import net.minecraft.block.Block;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.*;
+import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xueluoanping.dtsakuracompact.pro.info;
-import xueluoanping.dtsakuracompact.proxy.CommonProxy;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid= info.modid, name= info.name, dependencies = info.dependencies, updateJSON = "")
-public class DynamicTrees_Sakura {
-	
 
-	public static final Logger LOGGER = LogManager.getLogger(info.modid);
-	@Mod.Instance
-	public static DynamicTrees_Sakura instance;
-	
-	@SidedProxy(clientSide = "xueluoanping.dtsakuracompact.proxy.ClientProxy", serverSide = "xueluoanping.dtsakuracompact.proxy.CommonProxy") //com.
-	public static CommonProxy proxy;
-	
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		proxy.preInit();
-	}
-	
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		proxy.init();
-	}
-	
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		proxy.postInit();
-	}
-	
+// The value here should match an entry in the META-INF/mods.toml file
+@Mod(DynamicTrees_Sakura.MOD_ID)
+public class DynamicTrees_Sakura
+{
+    public static final String MOD_ID = "dtsakuracompact";
+    // Directly reference a log4j logger.
+    public static final Logger LOGGER = LogManager.getLogger();
+
+    public DynamicTrees_Sakura() {
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Register the enqueueIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        // Register the processIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        // Register the doClientStuff method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
+        // MinecraftForge.EVENT_BUS.register(TreeGrowHandler.instance);
+        RegistryHandler.setup(MOD_ID);
+    }
+
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        // some preinit code
+//        LOGGER.info("HELLO FROM PREINIT");
+//        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        // do something that can only be done on the client
+//        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+    }
+
+    private void enqueueIMC(final InterModEnqueueEvent event)
+    {
+        // some example code to dispatch IMC to another mod
+//        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+    }
+
+    private void processIMC(final InterModProcessEvent event)
+    {
+        // some example code to receive and process InterModComms from other mods
+//        LOGGER.info("Got IMC {}", event.getIMCStream().
+//                map(m->m.getMessageSupplier().get()).
+//                collect(Collectors.toList()));
+    }
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    @SubscribeEvent
+    public void onServerStarting(FMLServerStartingEvent event) {
+        // do something when the server starts
+//        LOGGER.info("HELLO from server starting");
+    }
+
+    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
+    // Event bus for receiving Registry Events)
+    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+            // register a new block here
+//            LOGGER.info("HELLO from Register Block");
+        }
+    }
+
+    public void gatherData(final GatherDataEvent event) {
+        GatherDataHelper.gatherAllData(
+                MOD_ID,
+                event,
+                SoilProperties.REGISTRY,
+                Family.REGISTRY,
+                Species.REGISTRY,
+                LeavesProperties.REGISTRY
+        );;
+    }
+
 }
