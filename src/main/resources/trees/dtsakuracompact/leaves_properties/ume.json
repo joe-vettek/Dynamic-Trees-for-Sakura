@@ -1,5 +1,3 @@
 {
-    "type":"dtsakuracompact:ume",
-    "primitive_leaves":"sakura:umeleaves",
-    "color":"116777215"
+    "primitive_leaves":"sakura:ume_leaves"
 }

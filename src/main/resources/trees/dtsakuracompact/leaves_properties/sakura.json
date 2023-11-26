@@ -1,5 +1,4 @@
 {
-    "type":"dtsakuracompact:sakura",
-    "primitive_leaves":"sakura:sakuraleaves",
-    "color":"116777215"
+
+    "primitive_leaves":"sakura:sakuraleaves"
 }
