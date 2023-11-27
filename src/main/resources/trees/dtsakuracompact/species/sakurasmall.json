@@ -1,0 +1,30 @@
+{
+    "family":"dtsakuracompact:sakura",
+    "tapering": 0.5,
+    "signal_energy": 6.0,
+    "up_probability": 3,
+    "lowest_branch_height": 1,
+    "growth_rate": 2,
+    "leaves_properties":"dtsakuracompact:sakura",
+    "environment_factors":{
+        "cold":1,
+        "hot":0.5,
+        "dry":0.5,
+        "forest":1.05,
+        "wet":1.05
+    },
+    "perfect_biomes":{
+        "types":[
+            "cold"
+        ]
+    },
+    "common_override": {
+        "types":[
+            "cold"
+        ]
+    },
+    "primitive_sapling":"sakura:sakura_sapling",
+    "always_show_on_waila":true,
+    "generate_seed":false,
+    "generate_sapling":true
+}

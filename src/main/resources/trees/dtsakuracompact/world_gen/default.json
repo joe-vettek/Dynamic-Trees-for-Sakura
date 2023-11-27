@@ -1,0 +1,61 @@
+[
+  {
+    "select": {
+      "AND": [
+        {
+          "OR": [
+            {
+              "type": "forest"
+            },
+            {
+              "type": "plains"
+            }
+          ]
+        },
+        {
+          "type": "!mesa"
+        }
+      ]
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtsakuracompact:maplegreen": 1,
+          "dtsakuracompact:mapleorange": 1,
+          "dtsakuracompact:maplered": 1,
+          "dtsakuracompact:mapleyellow": 1,
+          "...": 20
+        }
+      }
+    }
+  },
+  {
+    "select": {
+      "AND": [
+        {
+          "OR": [
+            {
+              "type": "forest"
+            },
+            {
+              "type": "hills"
+            }
+          ]
+        },
+        {
+          "type": "!mesa"
+        }
+      ]
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtsakuracompact:sakura": 1,
+          "...": 50
+        }
+      }
+    }
+  }
+]

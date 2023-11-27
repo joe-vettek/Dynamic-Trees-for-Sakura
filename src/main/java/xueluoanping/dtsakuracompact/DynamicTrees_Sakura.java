@@ -38,6 +38,8 @@ public class DynamicTrees_Sakura
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::gatherData);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         // MinecraftForge.EVENT_BUS.register(TreeGrowHandler.instance);

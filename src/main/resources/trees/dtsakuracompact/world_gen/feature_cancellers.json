@@ -1,0 +1,10 @@
+[
+  {
+    "__comment": "Cancel standard tree features from the overworld.",
+    "select": { "name": "minecraft:.*", "tag": "#minecraft:is_overworld" },
+    "cancellers": {
+      "type": "tree",
+      "namespace": "sakura"
+    }
+  }
+]

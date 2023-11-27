@@ -1,0 +1,26 @@
+{
+  "block.dtsakuracompact.sakura_branch": "有活力的樱树",
+  "block.dtsakuracompact.sakura_sapling": "樱花树苗",
+  "block.dtsakuracompact.sakurasmall_sapling": "山樱树苗",
+  "block.dtsakuracompact.maple_branch": "有活力的枫树",
+  "block.dtsakuracompact.maplegreen_sapling": "绿枫树苗",
+  "block.dtsakuracompact.mapleorange_sapling": "橙枫树苗",
+  "block.dtsakuracompact.maplered_sapling": "红枫树苗",
+  "block.dtsakuracompact.mapleyellow_sapling": "黄枫树苗",
+
+  "dtsakuracompact": "动态的树：樱附属",
+  "item.dtsakuracompact.sakura_seed": "粉色樱果",
+  "item.dtsakuracompact.maplegreen_seed": "绿枫翅果",
+  "item.dtsakuracompact.mapleorange_seed": "橙枫翅果",
+  "item.dtsakuracompact.maplered_seed": "红枫翅果",
+  "item.dtsakuracompact.mapleyellow_seed": "黄枫翅果",
+
+  "species.dtsakuracompact.sakura": "樱树",
+  "species.dtsakuracompact.sakurasmall": "山樱",
+  "species.dtsakuracompact.maplegreen": "绿枫",
+  "species.dtsakuracompact.mapleorange": "橙枫",
+  "species.dtsakuracompact.maplered": "红枫",
+  "species.dtsakuracompact.mapleyellow": "黄枫"
+}
+
+
