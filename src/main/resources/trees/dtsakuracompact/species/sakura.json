@@ -1,14 +1,18 @@
 {
     "family":"dtsakuracompact:sakura",
-    "tapering":0.3,
-    "signal_energy":12.0,
-    "growth_rate":0.8,
+    "tapering": 0.2,
+    "signal_energy": 16.0,
+    "up_probability": 1,
+    "lowest_branch_height": 2,
+    "growth_rate": 1.6,
+    "soil_longevity": 16,
     "leaves_properties":"dtsakuracompact:sakura",
     "environment_factors":{
-        "cold":0.75,
+        "cold":1,
         "hot":0.5,
         "dry":0.5,
-        "forest":1.05
+        "forest":1.05,
+        "wet":1.05
     },
     "perfect_biomes":{
         "types":[

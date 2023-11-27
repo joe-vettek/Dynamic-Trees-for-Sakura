@@ -1,13 +1,15 @@
 {
     "family":"dtsakuracompact:maple",
-    "tapering":0.3,
-    "signal_energy":12.0,
-    "growth_rate":0.8,
+    "tapering": 0.1,
+    "signal_energy": 15.0,
+    "up_probability": 4,
+    "lowest_branch_height": 4,
+    "growth_rate": 1.25,
     "leaves_properties":"dtsakuracompact:mapleorange",
     "environment_factors":{
-        "cold":0.75,
-        "hot":0.5,
-        "dry":0.5,
+        "cold":1.05,
+        "hot":0.8,
+        "dry":0.8,
         "forest":1.05
     },
     "perfect_biomes":{
